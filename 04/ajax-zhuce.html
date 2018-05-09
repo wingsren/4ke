@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html >
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        
+<html>
+    <head>
+        <title>注册页面</title>
+        <link href="css/register.css" type="text/css" rel="stylesheet">
+        <link href="css/global.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="layout">
+            <span class="title">个人注册</span>
+            <form name="myform"  action="http://www.1ke.co/backend/teach/js/checkuser_post.php" method="post" >
+            <ul>
+                <li><i class="un"><img src="images/user_name.png"></i><input class="username" type="text" placeholder="请输入用户名" id="uname" name="username"/></li>
+                <li><i class="pw"><img src="images/pwd.png"></i><input class="pwd" type="password" placeholder="请输入密码"id="password" name="password" /></li>
+                <li><i class="pw2"><img src="images/pwd.png"></i><input class="pwd2" type="password" placeholder="请输入确认密码"id="passwd" /></li>
+                 <li class="sex">性别：<input type="radio" name="sex" id="man" /> 男  <input type="radio" id="woman" name="sex"/>女</li>
+                 <li class="em">邮箱：<input type="text"name="email"></li>
+                 <li class="xueli">教育水平：<select name="jysp" >
+                      <option value="中专">中专</option>
+                      <option value="大专">大专</option>
+                      <option value="本科" selected>本科</option>
+                      <option value="研究生">研究生</option>
+                      </select>
+               </li>
+                 <li class="habit">兴趣：<input type="checkbox" /> 听歌 <input type="checkbox" /> 看电影<input type="checkbox" /> 学习</li>
+                 <li><div class="queren"><input class="fx" type="checkbox" checked="checked" /><p>我已阅读并同意《用户协议》</p></div></li>
+                <li><button class="submit" type="submit" >注册</button></li>
+           </ul>
+            </form>
+        </div>
+    </body>
+</html>

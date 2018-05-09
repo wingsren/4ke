@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>Ajax</title>
+		<style>
+			#box{
+				width: 60%;
+				height:500px;
+				margin: 0 auto;
+				background-color: #897d55;
+			}
+			
+			#btn{
+				margin-top: 50px;
+				margin-left: 50px;
+				background-color: #caad5f;
+				border: 0;
+				color: white;
+				width: 100px;
+				height: 30px;
+				padding: 5px;
+				border-radius: 3px;
+			}
+			
+			#datdRec{
+				width: 90%;
+				height: 300px;
+				margin: 5px auto;
+				background-color:#b4a582;
+			}
+			
+			
+			ul {
+				list-style: none;
+				line-height: 28px;
+			}
+			
+			ul li span{
+				color: #8d742a;
+				font-weight: 600;
+				text-align: right;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" id="btn" value="点击展示数据"/><br />
+			<div id="datdRec"></div>
+			<p>借鉴朱同学的代码</p>
+		</div>
+		
+		<script>
+		document.getElementById("btn").addEventListener('click',getData);
+		function getData(){
+			var xhr=new XMLHttpRequest();
+			xhr.open('GET','http://www.1ke.co/backend/teach/js/json.php',true);
+			xhr.onload=function(){
+				if(this.status==200){
+					//console.log(this.responseText);
+					var data=JSON.parse(this.responseText);
+					//console.log(data.cars);
+					var output='';
+					//ECMA6
+					output+=`
+						<ul>
+						
+						
+						<li> <span>用户名: </span> ${data.username} </li>
+						<li> <span>密码: </span> ${data.password} </li>
+						<li> <span>汽车品牌: </span> ${data.cars} </li>
+						</ul>
+					
+					`;
+					document.getElementById("datdRec").innerHTML=output;
+					
+				}
+			}
+			xhr.send()
+		}
+		
+		</script>
+		
+	</body>
+</html>
